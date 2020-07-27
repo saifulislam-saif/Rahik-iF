@@ -1,3 +1,7 @@
+
+                            /* font-family */
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+
 /*
 ================ table Of content =================
 ---------------------------------------------------
@@ -21,6 +25,7 @@
 ================ 00 common css start =================
 ===================================================
 */
+ 
 
 * {
     margin: 0;
@@ -29,6 +34,11 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+html{
+    font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
 }
 
 a {
@@ -145,22 +155,68 @@ span {
 ================================================
 */
 #header {
-    background: #1b8d46;
-    padding: 10px 0;
+   
+    padding:0;
+    margin: 3px;
 }
 
-#header .body h3 {
+#header .body .col  {
+    background-color: #18f56c;
+    position: relative;
+    border-radius: 2px;
     text-align: center;
     text-transform: uppercase;
     font-size: 36px;
     color: #fff;
+    padding: 10px 0;
+    margin-bottom: 3px;
+    transition: .3s;
+   
 }
+#header .body .col:hover{
+    color:  #18f56c;
+    background-color: #fff;
+    outline: 1px solid #18f56c;
+}
+
+
+
+
+
+#header .body .col:nth-child(1)>h3
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 10;
+    animation: forward 1.2s ease-in-out;
+    
+}
+
+#header .body .col:nth-child(1)>h3{
+    position: absolute;  
+    width: 100%;
+    left: 0;
+    top: 10;
+}
+
+#header .body .col:nth-child(3)>h3
+{
+    position: absolute;  
+    width: 100%;
+    left: 0;
+    top: 10;
+    animation: backward 1.2s ease-in-out;
+    
+}
+
 
 /*
 ================================================
 ================ header end ====================
 ================================================
 */
+
 
 
 
@@ -194,8 +250,39 @@ span {
     top: 0;
     width: 100%;
     height: 100%;
-    background: #1c2a42bf;
+    background: #06132bee;
     z-index: -1;
+}
+
+#about .col .text{
+    font-size: 10px;
+    color: #fff;
+    padding-top: 60px;
+    
+}
+
+#about .col .text h3 {
+    margin-bottom: 20px;
+    color: #1b8d46;
+    font-size: 20px;
+    
+}
+#about .col .text h1{
+    padding: 10px 0;
+    font-weight: 700;
+    font-size: 60px;
+    
+}
+
+#about .col .text p{
+    font-size: 14px;
+    margin-top: 20px;
+    
+    margin-bottom: 50px;
+}
+
+#about .col .text h4{
+    margin-bottom: 20px;
 }
 
 /*
@@ -219,8 +306,35 @@ span {
 ================================================
 */
 #experience {
+    
     padding: 100px 0;
     background: #f7f7f7;
+    position: relative;
+}
+
+#experience .background {
+    
+    background-color:   rgb(26, 33, 73);
+    padding: 110px 0;
+    padding-left:10px;
+}
+
+#experience .head{
+    color: rgb(13, 243, 71);
+    margin-bottom: 40px;
+    padding-right: 30px;
+    margin-top: -40px;
+    text-align: center;
+    
+    
+}
+#experience .body p{
+    color: white;
+    margin-bottom: 30px;
+    margin-left: -30px;
+    text-align: justify;
+    padding-right: 20px;
+    
 }
 
 
@@ -244,10 +358,93 @@ span {
 ================ 05 offer start ================
 ================================================
 */
-#offer {
-    padding: 100px 0;
-    background: #fff;
-}
+#offer .my-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #offer .card {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 210px 210px 80px;
+    grid-template-areas: "image" "text" "stats";
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    font-family: roboto;
+    text-align: center;
+  }
+
+  
+
+  #offer .card-text {
+    grid-area: text;
+  }
+
+  #offer .card-stats {
+    grid-area: stats; 
+    
+  }
+  #offer .card-image {
+    grid-area: image;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+    
+  }
+
+ 
+  #offer .card-text {
+    grid-area: text;
+    margin: 25px;
+    
+  }
+  #offer .card-text .date {
+    color: rgb(25, 7, 73);
+    font-size:13px;
+  }
+  #offer .card-text p {
+    margin-top: 10px;
+    color: #000;
+    font-size:15px;
+    font-weight: 300;
+  }
+  #offer  .card-text h2 {
+    color: rgb(255, 255, 255);  
+    margin-top:0px;
+    font-size:28px;
+  }
+  
+  #offer .card-stats {
+    grid-area: stats; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: rgb(7, 173, 57);
+  }
+  
+  #offer .card-stats .stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding:10px;
+  }
+  
+  #offer .card:hover {
+    transform: scale(1.15);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+  }
+ #offer .card {
+  
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin:30px;
+  }
 
 /*
 ================================================
@@ -365,3 +562,41 @@ span {
 ================ footer end ====================
 ================================================
 */
+
+
+
+
+
+/*
+================================================
+================ header-keyframes ====================
+================================================
+*/
+
+@keyframes forward{
+    from{
+        left: -300px;
+    }
+    to{
+        left: 0;
+    }
+}
+
+@keyframes backward{
+    from{
+        left: 300px;
+    }
+    to{
+        left: 0;
+    }
+}
+
+
+
+
+/*
+================================================
+================ header-keyframes end ====================
+================================================
+*/
+
