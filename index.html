@@ -425,23 +425,37 @@
     -->
     <section id="article">
         <div class="container ">
-            <div class="head text-center mb-5">
+              <div class="head text-center mb-5">
                 <h2 class="display-5">Our Brand New Articles</h2>
                 <p class="h6">Maecenas ullam, Mollis suscipit sem adipisicing Eros dictumst</p>
-            </div>
-            <div class="my-cards">
-            <div class="card">
-                <div class="card-image">
-                    <img class="img-fluid w-100" src="images/article-1.jpg" alt="">
-                </div>
-                <div class="card-text">
-                  
-                  <h2>Corrupti Explicabo Congue Placea Felis</h2>
-                  <p class="lead">Dolor eum doloremque, commodo odit esse recusandae donec nulla commod</p>
-                  <a href="#" class="btn">Buy Now</a>
-                </div>
-                
               </div>
+
+            <div class="my-cards">
+           <div id="slider">
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2">
+    <input type="radio" name="slider" id="slide3">
+    <input type="radio" name="slider" id="slide4">
+    <div id="slides">
+       <div id="overflow">
+          <div class="inner">
+             <div class="slide slide_1">
+                <div class="slide-content">
+                  <div class="card">
+                    <div class="card-image">
+                        <img class="img-fluid w-100" src="images/article-1.jpg" alt="">
+                    </div>
+                    <div class="card-text">
+                      
+                      <h2>Corrupti Explicabo Congue Placea Felis</h2>
+                      <p class="lead">Dolor eum doloremque, commodo odit esse recusandae donec nulla commod</p>
+                      <a href="#" class="btn">Buy Now</a>
+                    </div>
+                    
+                  </div>
+                </div>
+             </div>
+             <div class="slide slide_2">
               <div class="card">
                 <div class="card-image">
                     <img class="img-fluid w-100" src="images/article-2.jpg" alt="">
@@ -453,6 +467,8 @@
                   <a href="#" class="btn">Buy Now</a>
                 </div>   
               </div>
+             </div>
+             <div class="slide slide_3">
               <div class="card">
                 <div class="card-image">
                     <img class="img-fluid w-100" src="images/article-3.jpg" alt="">
@@ -462,7 +478,38 @@
                   <p>Dolor eum doloremque, commodo odit esse recusandae donec nulla commod</p>
                   <a href="#" class="btn">Buy Now</a>
                 </div>
-              </div>         
+              </div>  
+             </div>
+             <div class="slide slide_4">
+                <div class="card">
+                <div class="card-image">
+                    <img class="img-fluid w-100" src="images/article-3.jpg" alt="">
+                </div>
+                <div class="card-text">
+                  <h2>Nunc Officiis Tenetur Ad Duis Ipsam Magni</h2>
+                  <p>Dolor eum doloremque, commodo odit esse recusandae donec nulla commod</p>
+                  <a href="#" class="btn">Buy Now</a>
+                </div>
+              </div>  
+             </div>
+          </div>
+       </div>
+    </div>
+    <div id="controls">
+       <label for="slide1"></label>
+       <label for="slide2"></label>
+       <label for="slide3"></label>
+       <label for="slide4"></label>
+    </div>
+    <div id="bullets">
+       <label for="slide1"></label>
+       <label for="slide2"></label>
+       <label for="slide3"></label>
+       <label for="slide4"></label>
+    </div>
+ </div>
+      </div>      
+  
         </div>
     </section>
     <!--
@@ -586,6 +633,8 @@
     <script defer src="js/jquery-1.2.4.min.js"></script>
     <script defer src="js/jquery.waypoints.min.js"></script>
 
+   
+
     <!-- plugins & others script -->
     <script defer src="js/msi-typing.min.js"></script>
     
@@ -601,6 +650,7 @@
 
     <!-- script js -->
     <script defer src="js/script.js"></script>
+    
 </body>
 
 </html>
