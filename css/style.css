@@ -1,3 +1,7 @@
+
+                            /* font-family */
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+
 /*
 ================ table Of content =================
 ---------------------------------------------------
@@ -21,6 +25,7 @@
 ================ 00 common css start =================
 ===================================================
 */
+ 
 
 * {
     margin: 0;
@@ -30,6 +35,12 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+html{
+    font-family: 'Montserrat', sans-serif;
+  	scroll-behavior: smooth;
+}
+
 
 a {
     text-decoration: none;
@@ -61,6 +72,10 @@ span {
     padding: 0;
 }
 
+.ptb-25{
+    padding: 25px 0;
+}
+
 /*
 ================================================
 ================ common css end ================
@@ -81,7 +96,154 @@ span {
 ================ 01 navbar start ===============
 ================================================
 */
-#navbar {
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+nav{
+  background: #fff;
+  height: 80px;
+  width: 100%;
+}
+
+nav label.logo{
+  color: #f2f2f2;
+  font-size: 33px;
+  line-height: 80px;
+  padding: 0 80px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+nav ul{
+  float: right;
+  margin-right: 40px;
+  margin-top: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 27px;
+  margin: 0 2px;
+}
+
+nav ul li a{
+  color: rgb(13, 243, 71);
+  font-weight: 500;
+  font-size: 20px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  /* text-transform: uppercase; */
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+nav a.active,nav a:hover{
+  color: #fff;   
+  background: rgba(13, 243, 71, 0.7);  /* hover menu item color */
+  transition: .5s;
+}
+nav .checkbtn{
+  font-size: 30px;
+  color: rgb(13, 243, 71);
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+nav #check{
+  display: none;
+}
+
+@media (max-width: 1100px){
+ nav label.logo{
+    font-size: 30px;
+    padding-left: 25px;
+  }
+  nav ul li a{
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 940px){
+ nav label.logo{
+    font-size: 27px;
+    padding-left: 25px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 870px){    
+ nav .checkbtn{
+    display: block;
+    margin-right: 35px;
+  }
+
+  @media (max-width: 858px){
+  nav  a.nav_btn{
+      padding: 5px 10px;
+    }
+  }
+  
+ nav ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #02233D;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+    z-index: 5;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+ nav li a:hover,nav li a.active{
+    background: none;
+    color: rgba(104, 255, 142, 0.63);
+  }
+ nav #check:checked ~ ul{
+    left: 0;
+  }
+}
+
+
+nav a.nav_btn {
+  color: #fff;
+  background: #41dd7d;
+  line-height: 40px;
+  padding: 7px 8px;
+  border-radius: 5px;
+  
+  -webkit-transition: all linear 0.3s;
+  -moz-transition: all linear 0.3s;
+  -ms-transition: all linear 0.3s;
+  -o-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+}
+nav a.nav_btn:hover {
+  background: #15502bdc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #navbar {
     height: 80px;
     background: #fff;
 }
@@ -123,6 +285,8 @@ span {
 #navbar .navbar-nav .nav-item a.nav_btn:hover {
     background: #1b8d46bf;
 }
+ */
+
 
 /*
 ================================================
@@ -145,22 +309,67 @@ span {
 ================================================
 */
 #header {
-    background: #1b8d46;
-    padding: 10px 0;
+   
+    padding:0;
+    margin: 3px;
 }
 
-#header .body h3 {
+#header .body .col  {
+    background-color: #18f56c;
+    position: relative;
     text-align: center;
     text-transform: uppercase;
     font-size: 36px;
     color: #fff;
+    padding: 10px 0;
+    margin-bottom: 3px;
+    transition: .3s;
+   
 }
+#header .body .col:hover{
+    color:  #18f56c;
+    background-color: #fff;
+    outline: 1px solid #18f56c;
+}
+
+
+
+
+
+#header .body .col:nth-child(1)>h3
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 10;
+    animation: forward 1.2s ease-in-out;
+    
+}
+
+#header .body .col:nth-child(1)>h3{
+    position: absolute;  
+    width: 100%;
+    left: 0;
+    top: 10;
+}
+
+#header .body .col:nth-child(3)>h3
+{
+    position: absolute;  
+    width: 100%;
+    left: 0;
+    top: 10;
+    animation: backward 1.2s ease-in-out;
+    
+}
+
 
 /*
 ================================================
 ================ header end ====================
 ================================================
 */
+
 
 
 
@@ -194,8 +403,39 @@ span {
     top: 0;
     width: 100%;
     height: 100%;
-    background: #1c2a42bf;
+    background: #06132bee;
     z-index: -1;
+}
+
+#about .col .text{
+    font-size: 10px;
+    color: #fff;
+    padding-top: 60px;
+    
+}
+
+#about .col .text h3 {
+    margin-bottom: 20px;
+    color: #1b8d46;
+    font-size: 20px;
+    
+}
+#about .col .text h1{
+    padding: 10px 0;
+    font-weight: 700;
+    font-size: 60px;
+    
+}
+
+#about .col .text p{
+    font-size: 14px;
+    margin-top: 20px;
+    
+    margin-bottom: 50px;
+}
+
+#about .col .text h4{
+    margin-bottom: 20px;
 }
 
 /*
@@ -219,8 +459,35 @@ span {
 ================================================
 */
 #experience {
+    
     padding: 100px 0;
     background: #f7f7f7;
+    position: relative;
+}
+
+#experience .background {
+    
+    background-color:   rgb(26, 33, 73);
+    padding: 110px 0;
+    padding-left:10px;
+}
+
+#experience .head{
+    color: #fff;
+    margin-bottom: 40px;
+    padding-right: 30px;
+    margin-top: -40px;
+    text-align: center;
+    
+    
+}
+#experience .body p{
+    color: white;
+    margin-bottom: 30px;
+    margin-left: -30px;
+    text-align: justify;
+    padding-right: 20px;
+    
 }
 
 
@@ -244,10 +511,53 @@ span {
 ================ 05 offer start ================
 ================================================
 */
-#offer {
-    padding: 100px 0;
-    background: #fff;
-}
+
+#offer .scroll-container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: auto;
+    padding: 0 2rem;
+  }
+
+  #offer img {
+    width: 100%;
+  }
+  
+  #offer .card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    background: #f1f1f1;
+    margin-bottom: 2rem;
+  }
+  
+  #offer .card h3 {
+    margin-bottom: 2rem;
+    color: rgb(13, 7, 99);
+  }
+  
+  #offer .card img {
+    height: 450px;
+  }
+  
+  #offer .card > div {
+    padding: 2rem;
+  }
+  
+  #offer .card:nth-child(even) img {
+    order: 2;
+  }
+  
+  #offer main .card p{
+      text-align: center;
+  }
+  
+  @media(max-width:600px) {
+    #offer  .card {
+      display: block;
+    }
+  } 
+
 
 /*
 ================================================
@@ -294,9 +604,211 @@ span {
 ================ 07 article start ==============
 ================================================
 */
+
+ 
+#slider {
+    margin: 0 auto;
+    width: 800px;
+    max-width: 100%;
+    text-align: center;
+  }
+  #slider input[type=radio] {
+    display: none;
+  }
+  #slider label {
+    cursor:pointer;
+    text-decoration: none;
+  }
+  #slides {
+    padding: 10px;  
+    background: #fff;
+    position: relative;
+    z-index: 1;
+  }
+  #overflow {
+    width: 100%;
+    overflow: hidden;
+  }
+  #slide1:checked ~ #slides .inner {
+    margin-left: 0;
+  }
+  #slide2:checked ~ #slides .inner {
+    margin-left: -100%;
+  }
+  #slide3:checked ~ #slides .inner {
+    margin-left: -200%;
+  }
+  #slide4:checked ~ #slides .inner {
+    margin-left: -300%;
+  }
+  #slides .inner {
+    transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    width: 400%;
+    line-height: 20px;
+    height: 600px;
+  }
+  #slides .slide {
+    width: 25%;
+    float:left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+  }
+
+  #controls {
+    margin: -330px 0 0 0;
+    width: 100%;
+    height: 50px;
+    z-index: 3;
+    position: relative;
+  }
+  #controls label {
+    transition: opacity 0.2s ease-out;
+    display: none;
+    width: 50px;
+    height: 50px;
+    opacity: .4;
+  }
+  #controls label:hover {
+    opacity: 1;
+  }
+  #slide1:checked ~ #controls label:nth-child(2),
+  #slide2:checked ~ #controls label:nth-child(3),
+  #slide3:checked ~ #controls label:nth-child(4),
+  #slide4:checked ~ #controls label:nth-child(1) {
+    background: url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;
+    float:right;
+    margin: 0 -50px 0 0;
+    display: block;
+  }
+  #slide1:checked ~ #controls label:nth-last-child(2),
+  #slide2:checked ~ #controls label:nth-last-child(3),
+  #slide3:checked ~ #controls label:nth-last-child(4),
+  #slide4:checked ~ #controls label:nth-last-child(1) {
+    background: url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;
+    float:left;
+    margin: 0 0 0 -50px;
+    display: block;
+  }
+  #bullets {
+    margin: 150px 0 0;
+    text-align: center;
+  }
+  #bullets label {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius:100%;
+    background: #ccc;
+    margin: 0 10px;
+  }
+  #slide1:checked ~ #bullets label:nth-child(1),
+  #slide2:checked ~ #bullets label:nth-child(2),
+  #slide3:checked ~ #bullets label:nth-child(3),
+  #slide4:checked ~ #bullets label:nth-child(4) {
+    background: #444;
+  }
+  @media screen and (max-width: 900px) {
+    #slide1:checked ~ #controls label:nth-child(2),
+    #slide2:checked ~ #controls label:nth-child(3),
+    #slide3:checked ~ #controls label:nth-child(4),
+    #slide4:checked ~ #controls label:nth-child(1),
+    #slide1:checked ~ #controls label:nth-last-child(2),
+    #slide2:checked ~ #controls label:nth-last-child(3),
+    #slide3:checked ~ #controls label:nth-last-child(4),
+    #slide4:checked ~ #controls label:nth-last-child(1) {
+       margin: 0;
+    }
+    #slides {
+       max-width: calc(100% - 140px);
+       margin: 0 auto;
+    }
+  }
+  
+  
+ 
+
+
+
+
 #article {
     padding: 100px 0;
 }
+#article .my-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+#article .card {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 200px 200px 80px;
+    grid-template-areas: "image" "text" "stats";
+    border-radius: 3px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    font-family: roboto;
+    text-align: center;
+  }
+
+  
+
+ #article .card-image {
+    grid-area: image;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+    
+}
+#article .card-text .date {
+    color: rgb(25, 7, 73);
+    font-size:13px;
+  }
+#article .card-text p {
+    margin-top: 10px;
+    color: #000;
+    font-size:15px;
+    font-weight: 300;
+  }
+#article  .card-text h2 {
+    color: rgb(12, 3, 92);  
+    margin-top:45px;
+    font-size:28px;
+  }
+  
+
+  
+
+  
+#article .card:hover {
+    transform: scale(1.15);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+  }
+#article .card {
+  
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin:30px;
+  }
+
+
+  #article .btn {
+    grid-area: stats;  
+    background: rgb(13, 243, 71);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+
+  #article .btn:hover{
+      color: rgb(13, 243, 71);
+      background-color: #fff;
+      border: 1px solid #18f56c;
+      font-weight: 600;
+  }
 
 /*
 ================================================
@@ -365,3 +877,41 @@ span {
 ================ footer end ====================
 ================================================
 */
+
+
+
+
+
+/*
+================================================
+================ header-keyframes ====================
+================================================
+*/
+
+@keyframes forward{
+    from{
+        left: -300px;
+    }
+    to{
+        left: 0;
+    }
+}
+
+@keyframes backward{
+    from{
+        left: 300px;
+    }
+    to{
+        left: 0;
+    }
+}
+
+
+
+
+/*
+================================================
+================ header-keyframes end ====================
+================================================
+*/
+
